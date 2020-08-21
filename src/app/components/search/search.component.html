@@ -1,0 +1,29 @@
+<!-- Buscar peliculas, mostrar con la imagen del poster,
+al hacer click debe de llevarmr a ver la informacion de la pelicula -->
+
+<div class="container mt-3">
+    <input type="text" class="form-control" placeholder="Seach movie" (keyup.enter)="searchMovie(movie.value)" #movie>
+</div>
+
+<!-- <div class="alert alert-danger mt-5" role="alert" *ngIf="moviesSearched.length != 0">
+    No hay ningún resultado para ....
+</div> -->
+
+<!-- *ngIf="moviesSearched.length === 0" -->
+
+<div class="row">
+    <div class="container mt-4">
+        <h2> Peliculas del cine actual </h2>
+        <div class="card-columns m-3">
+            <div class="card" *ngFor="let movies of moviesSearched">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + movies.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  movies.original_title }} </h5>
+                    <p class="card-text"> {{  movies.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(movies.id)"> Ver más </button>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<hr>

@@ -1,0 +1,19 @@
+<!-- imagen del poster en grande, sinopsis de la película
+si lo llame del home, tengo que regresar al home, si lo llame
+del search, tiene que regresarme al search --> 
+
+<div class="container mt-4">
+    <div class="m12"></div>
+    <h2 class="control"> Movie: {{ movieSeached.title }} </h2>
+    <button class="btn btn-outline-danger" [routerLink]="['/home']" > Back </button>
+    <div class="card-columns m-3">
+        <div class="card">
+            <img src="{{'http://image.tmdb.org/t/p/w300' + movieSeached.poster_path}}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title"> {{  movieSeached.original_title }} </h5>
+                <p class="card-text"> {{  movieSeached.overview }} </p>
+                <i class="fas fa-star vote_average"> {{ movieSeached.vote_average }} </i>
+            </div>
+        </div>
+    </div>
+</div>

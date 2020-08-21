@@ -1,0 +1,91 @@
+<!-- Peliculas del cine actual | las mas populares | y para niños las mas populares -->
+<div class="container mt-4">
+    <div class="row">
+        <h2> Peliculas del cine actual </h2>
+        <div class="card-columns m-3">    
+                <app-cards-movies class="card" [movies]="movies" *ngFor="let movies of moviesTheatres">
+                </app-cards-movies>
+            <!-- <div class="card" *ngFor="let moviesT of moviesTheatres">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + moviesT.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  moviesT.original_title }} </h5>
+                    <p class="card-text"> {{  moviesT.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(moviesT.id)"> Ver más </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container mt-4">
+    <div class="row">
+        <h2> Peliculas mas populares </h2>
+        <div class="card-columns m-3">    
+                <app-cards-movies class="card" [movies]="movies" *ngFor="let movies of moviesMostPopulars">
+                </app-cards-movies>
+            <!-- <div class="card" *ngFor="let moviesT of moviesTheatres">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + moviesT.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  moviesT.original_title }} </h5>
+                    <p class="card-text"> {{  moviesT.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(moviesT.id)"> Ver más </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container mt-4">
+    <div class="row">
+        <h2> Peliculas para niños las más populares </h2>
+        <div class="card-columns m-3">    
+                <app-cards-movies class="card" [movies]="movies" *ngFor="let movies of moviesMostPopularsKids">
+                </app-cards-movies>
+            <!-- <div class="card" *ngFor="let moviesT of moviesTheatres">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + moviesT.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  moviesT.original_title }} </h5>
+                    <p class="card-text"> {{  moviesT.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(moviesT.id)"> Ver más </button>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<hr>
+
+<!-- 
+<div class="container mt-4">
+    <div class="row">
+        <h2> Peliculas mas populares </h2>
+        <div class="card-columns m-3">
+            <div class="card" *ngFor="let moviesP of moviesMostPopulars">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + moviesP.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  moviesP.original_title }} </h5>
+                    <p class="card-text"> {{  moviesP.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(moviesP.id)"> Ver más </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container mt-4">
+    <div class="row">
+        <h2> Peliculas para niños las más populares </h2>
+        <div class="card-columns m-3">
+            <div class="card" *ngFor="let moviesPK of moviesMostPopularsKids">
+                <img src="{{'http://image.tmdb.org/t/p/w300' + moviesPK.poster_path}}" class="card-img-top" alt="">
+                <div class="card-body">
+                    <h5 class="card-title"> {{  moviesPK.original_title }} </h5>
+                    <p class="card-text"> {{  moviesPK.overview }} </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(moviesPK.id)"> Ver más </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
