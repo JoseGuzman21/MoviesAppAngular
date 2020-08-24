@@ -2,7 +2,7 @@
 si lo llame del home, tengo que regresar al home, si lo llame
 del search, tiene que regresarme al search --> 
 
-<div class="container mt-4">
+<!-- <div class="container mt-4 main-container" *ngIf="movieSeached">
     <div class="m12"></div>
     <h2 class="control"> Movie: {{ movieSeached.title }} </h2>
     <button class="btn btn-outline-danger" [routerLink]="['/home']" > Back </button>
@@ -14,6 +14,25 @@ del search, tiene que regresarme al search -->
                 <p class="card-text"> {{  movieSeached.overview }} </p>
                 <i class="fas fa-star vote_average"> {{ movieSeached.vote_average }} </i>
             </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container mt-4" *ngIf="movieSeached">
+    <h1 class="control"> Movie: {{ movieSeached.title }} </h1>
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{'http://image.tmdb.org/t/p/w300' + movieSeached.poster_path}}" class="img-thumbnail img-fluid" alt="">
+        </div>
+        <div class="col-md-7">
+            <h3> Sinopsis </h3>
+            <hr>
+            <p class="text-justify"> {{  movieSeached.overview }} </p>
+            <h3> Frase celebre </h3>
+            <p class=""> {{  movieSeached.tagline }} </p>
+            <p> Popularidad: <small class="badge badge-primary"> {{ movieSeached.popularity | number:".0" }} /100 </small> </p>
+            <p> Voto promedio: <small class="badge badge-primary"> <i class="fas fa-star vote_average"> {{ movieSeached.vote_average }} </i> </small> </p>
+            <button class="btn btn-outline-danger" [routerLink]="['/' + regresar, busqueda]" > Back </button>
         </div>
     </div>
 </div>

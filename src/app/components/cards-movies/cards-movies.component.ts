@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CardsMoviesComponent implements OnInit {
 
-  @Input() movies: any[];
+  @Input() movies: any;
 
   constructor(private router: Router) {
   }
@@ -19,7 +19,7 @@ export class CardsMoviesComponent implements OnInit {
   // tslint:disable-next-line: typedef
   viewMovieById(idMovie: number) {
     /* console.log('idMovie: ', idMovie); */
-    this.router.navigate(['/movie', idMovie]);
+    this.router.navigate(['/movie', idMovie, 'home']);
   }
 
 }

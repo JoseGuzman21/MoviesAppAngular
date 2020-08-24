@@ -10,22 +10,29 @@ import { PeliculaService } from 'src/app/services/pelicula.service';
 export class MoviesComponent implements OnInit {
 
   movieSeached: any[] = [];
+  regresar = '';
+  busqueda: '';
 
   constructor(private ps: PeliculaService,
-              private activateRoute: ActivatedRoute) { }
+              private activateRoute: ActivatedRoute) {
+                this.getMovieById();
+              }
 
-  ngOnInit(): void {
-    this.getMovieById();
-  }
+  ngOnInit(): void {}
 
   // tslint:disable-next-line: typedef
   getMovieById() {
+    // tslint:disable-next-line: deprecation
     this.activateRoute.params.subscribe((params) => {
+      this.regresar = params['pag'];
+      if (params.busqueda) {
+        this.busqueda = params['busqueda']
+        console.log('busuqueda: ', this.busqueda);
+      }
       this.ps.getMovieById(params.id)
         .subscribe((data: any[]) => {
           this.movieSeached = data;
           console.log('data', this.movieSeached);
-          // console.log('data of getMovieById', this.movieSeached[0]['original_title']);
         });
       });
     }

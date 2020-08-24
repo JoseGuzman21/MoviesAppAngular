@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculaService } from 'src/app/services/pelicula.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -10,26 +11,29 @@ import { Router } from '@angular/router';
 export class SearchComponent implements OnInit {
 
   moviesSearched: any = [];
+  movie: string;
+  movieSearch = '';
 
   constructor(private ps: PeliculaService,
-              private router: Router) { }
+              private router: Router,
+              private ar: ActivatedRoute) {
+  this.ar.params.subscribe( params => {
+    console.log('params: ', this.movieSearch);
+    if (params.texto) {
+      this.movie = params.texto;
+      this.searchMovie(this.movie);
+    }
+  });
+}
 
   ngOnInit(): void {
   }
 
   // tslint:disable-next-line: typedef
   searchMovie(movie: string) {
-    // tslint:disable-next-line: triple-equals
-/*     if (this.movie.length == 0) {
-      return;
-    } */
     this.ps.searchMovie(movie).subscribe(data => {
+      this.movieSearch = movie;
       this.moviesSearched = data;
     });
-  }
-
-  // tslint:disable-next-line: typedef
-  viewMovieById(idMovie: number) {
-    this.router.navigate(['/movie', idMovie]);
   }
 }

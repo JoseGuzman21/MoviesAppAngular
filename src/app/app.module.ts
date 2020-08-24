@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 // Import routing
 import { AppRoutingModule } from './app-routing.module';
 
@@ -28,6 +28,7 @@ import { CardsMoviesComponent } from './components/cards-movies/cards-movies.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     HttpClientModule,
     HttpClientJsonpModule
   ],

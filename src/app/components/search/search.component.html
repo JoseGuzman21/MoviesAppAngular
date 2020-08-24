@@ -19,8 +19,8 @@ al hacer click debe de llevarmr a ver la informacion de la pelicula -->
                 <img src="{{'http://image.tmdb.org/t/p/w300' + movies.poster_path}}" class="card-img-top" alt="">
                 <div class="card-body">
                     <h5 class="card-title"> {{  movies.original_title }} </h5>
-                    <p class="card-text"> {{  movies.overview }} </p>
-                    <button class="btn btn-outline-primary mb-3 btn-block" (click)="viewMovieById(movies.id)"> Ver más </button>
+                    <p class="card-text text-justify"> {{  movies.overview | slice:0:300 }} ... </p>
+                    <button class="btn btn-outline-primary mb-3 btn-block" [routerLink]="['/movie', movies.id, 'search', movieSearch]" > Ver más </button>
                 </div>
             </div>
         </div>

@@ -13,9 +13,13 @@
                 <a class="nav-link" [routerLink]="['/search']">Buscar</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input type="text" class="form-control" placeholder="Seach movie" (keyup.enter)="searchMovie(movie.value)" #movie>
-            <button (click)=searchMovie(movie.value) class="btn btn-outline-primary my-2 my-sm-0" type="button"> Search </button>
+        <!-- <form role="form" novalidate class="form-inline my-2 my-lg-0">
+            <input #movie (keyup.enter)="searchMovie(movie.value)" type="text" class="form-control mr-sm-2" placeholder="Seach movie" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" (click)="searchMovie(movie.value)" type="button"> Search </button>
+        </form> -->
+        <form role="form" novalidate class="form-inline my-2 my-lg-0">
+            <input #movie (keyup.enter)="searchMovie(movie.value)" type="text" class="form-control mr-sm-2" placeholder="Search heroe" aria-label="Search">
+            <button (click)="searchMovie(movie.value)" type="button" class="btn btn-outline-success my-2 my-sm-0">Search</button>
         </form>
     </div>
 </nav>

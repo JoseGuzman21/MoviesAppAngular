@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   getAllMoviesTheatres() {
     this.ps.getAllMoviesTheatres()
       .subscribe((data: any[]) => {
-        console.log('data of getAllMoviesTheatres', data);
+        /* console.log('data of getAllMoviesTheatres', data); */
         this.moviesTheatres = data;
       });
   }
